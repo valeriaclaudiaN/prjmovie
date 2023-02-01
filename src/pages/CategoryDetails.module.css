@@ -1,0 +1,14 @@
+.categoryDetails {
+  text-align: left;
+}
+
+.categoryDetails a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+.categoryDetails h2,
+.categoryDetails h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
