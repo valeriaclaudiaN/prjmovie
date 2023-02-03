@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header>
-      <nav className={`${styles.nav} bg-primary w-100`}>
+      <nav className={`${styles.nav} bg-dark w-100`}>
         <Container className="d-flex justify-content-between align-items-center">
           <Link to="/" className="p-3">
             <img src="/logo.png" alt="Cinephile's Studio logo" />
@@ -49,7 +49,7 @@ function Header() {
               </li>
               <li className={isDisplayed ? "container" : null}>
                 <Link to="/favorites" className="p-3 text-uppercase text-light">
-                  Favorite
+                  Favorites
                 </Link>
               </li>
             </ul>

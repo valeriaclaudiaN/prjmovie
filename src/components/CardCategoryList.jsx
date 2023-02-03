@@ -15,6 +15,7 @@ function CardCategoryList(props) {
               name={category.name}
               imgPath={category.imgPath}
               deductedCategory={category.deductedCategory}
+              hasCloseButton={category.hasCloseButton}
             />
           </Col>
         ))}

@@ -39,19 +39,12 @@ function Home() {
           <h1 className="mb-5 pt-3"> TV Shows</h1>
           <CardCategoryList categoryList={adaptedShowsListFirstThree} />
 
-          <Link to="/category/tv" class-name="text-secondary">
+          <Link to="/category/TVShows" class-name="text-secondary">
             <p className="text-decoration-underline">
               {" "}
               See the complete list of all the popular TV Shows at the moment.
             </p>
           </Link>
-        </Container>
-      </section>
-
-      <section className="my-5">
-        <Container>
-          <h1 className="mb-5 pt-3">Your Favorites</h1>
-          <p>You don't have any favorites at the moment</p>
         </Container>
       </section>
     </Layout>

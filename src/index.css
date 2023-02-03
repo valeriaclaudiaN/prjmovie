@@ -1,11 +1,8 @@
 /* Adaugam variabile globale: */
 :root {
   --text-dark: #2b2922;
-  --text-light: #000000;
-
-  --bg-primary: #000000;
-  --bg-secondary: #090909;
-  --bg-dark: #000000;
+  --bg-secondary-dark: #230330;
+  --bg-dark: #392b3b;
 }
 
 /* Resetam proprietati default: */
@@ -16,6 +13,8 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-color: var(--bg-dark);
+  color: white;
 }
 
 ul {
@@ -27,20 +26,13 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
 a:hover {
-  color: inherit;
+  color: var(--bg-dark);
 }
 
 /* Customizam Bootstrap: */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background-color: #2bb686;
-  border-color: #2bb686;
-}
 
 .text-primary {
   color: #101d42 !important;

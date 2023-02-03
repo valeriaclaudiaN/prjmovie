@@ -6,8 +6,10 @@ import { FavContext } from "../store/context";
 
 function Favorites() {
   const { favState } = useContext(FavContext);
-  console.log(favState);
+
   const { favs } = favState;
+  console.log(favs);
+
   const adaptedMovieFavs = favs.filter(
     (movie) => movie.deductedCategory === "movies"
   );

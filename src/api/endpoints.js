@@ -1,9 +1,12 @@
 const API_KEY = "08bb6e2921ee867a7d1faebcc7443a93";
 
 // getting the data for the search bar functionality
-export function getSearchCategory(category, pageNumber = 1) {
-  const queryParams = `${category}?api_key=
-  ${API_KEY}&language=en-US&page=${pageNumber}`;
+export function getSearchCategoryEndpoint(
+  category,
+  searchContent,
+  pageNumber = 1
+) {
+  const queryParams = `${category}?api_key=${API_KEY}&query=${searchContent}&language=en-US&page=${pageNumber}`;
   return `https://api.themoviedb.org/3/search/${queryParams}`;
 }
 

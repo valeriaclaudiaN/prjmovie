@@ -21,7 +21,7 @@ export function favReducer(state, action) {
         (category) => category.id !== action.payload
       );
       const newState = {
-        favs: { ...filteredCategories },
+        favs: [...filteredCategories],
       };
       return newState;
     }
