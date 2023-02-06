@@ -43,10 +43,17 @@ function CategoryDetails() {
             <h1 className="pt-3 mb-5"> {name}</h1>
             <p className="fw-bold">{motto} </p>
             <div className="mb-4">
-              <img src={getImgURL(imgPath)} alt="No poster available" />
+              <img
+                src={
+                  !imgPath
+                    ? "https://bflix.biz/no-poster.png"
+                    : getImgURL(imgPath)
+                }
+                alt="No poster available"
+              />
             </div>
             <div className="fw-bold d-flex justify-content-between align-items-center mb-4">
-              <p>Rating: {vote}</p>
+              <p>IMDB Rating: {Math.round(vote * 100) / 100}</p>
               <Button
                 variant="dark"
                 // we need these specific keys because we are going to re-use CardCategoryList in Favorites page

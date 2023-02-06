@@ -1,8 +1,8 @@
 /* Adaugam variabile globale: */
 :root {
   --text-dark: #2b2922;
-  --bg-secondary-dark: #230330;
-  --bg-dark: #392b3b;
+  --bg-secondary-dark: #0e0e0e;
+  --bg-dark: #000000;
 }
 
 /* Resetam proprietati default: */
@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--bg-dark);
   color: white;
 }
@@ -34,36 +34,6 @@ a:hover {
 
 /* Customizam Bootstrap: */
 
-.text-primary {
-  color: #101d42 !important;
-}
-
-.text-secondary {
-  color: #fbb44c !important;
-}
-
-.text-light {
-  color: #030303 !important;
-}
-
-.text-dark {
-  color: #2b2922 !important;
-}
-
-.bg-primary {
-  background-color: #ffffff !important;
-}
-
-.bg-secondary {
-  background-color: #dfedf5 !important;
-}
-
 .bg-dark {
-  background-color: #ffffff !important;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: bold;
+  background-color: var(--bg-secondary-dark) !important;
 }

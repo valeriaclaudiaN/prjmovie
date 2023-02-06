@@ -1,26 +1,36 @@
 import { useState } from "react";
 import Pagination from "react-bootstrap/Pagination";
-import { useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function Pag() {
-  const history = useHistory();
+function Pag(props) {
+  let { baseUrl } = props;
+  let navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   let page = currentPage;
+
+  //useLocation().search returns "?Page-{nr}"
+  //Reseting page to the current page from the url (useful for switching between movies and TV Shows)
+  const pgQueryParam = new URLSearchParams(useLocation().search);
+  let currentPageUrl = pgQueryParam.get("Page");
+  if (!currentPageUrl) {
+    page = "1";
+  }
+
   function handlePrevPage() {
     page > 1 && page--;
     setCurrentPage(page);
-    console.log(history);
+    navigate(`${baseUrl}?Page=${page}`);
   }
   function handleNextPage() {
     page++;
     setCurrentPage(page);
-    console.log(history);
+    navigate(`${baseUrl}?Page=${page}`);
   }
 
   return (
     <Pagination>
       <Pagination.Prev onClick={handlePrevPage} />
-      <Pagination.Item active>{page}</Pagination.Item>
+      <Pagination.Item disabled>{page}</Pagination.Item>
 
       <Pagination.Next onClick={handleNextPage} />
     </Pagination>

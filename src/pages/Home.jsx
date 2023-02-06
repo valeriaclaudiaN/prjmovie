@@ -12,12 +12,12 @@ function Home() {
   const moviesEndpoint = getPopularCategoryEndpoint("movie");
   const movies = useFetch(moviesEndpoint);
   const adaptedMoviesList = getCategoryList(movies);
-  const adaptedMoviesListFirstThree = adaptedMoviesList.slice(0, 3);
+  const adaptedMoviesListFirstThree = adaptedMoviesList.slice(0, 4);
 
   const showsEndpoint = getPopularCategoryEndpoint("tv");
   const shows = useFetch(showsEndpoint);
   const adaptedShowsList = getCategoryList(shows);
-  const adaptedShowsListFirstThree = adaptedShowsList.slice(0, 3);
+  const adaptedShowsListFirstThree = adaptedShowsList.slice(0, 4);
 
   return (
     <Layout>
@@ -27,7 +27,7 @@ function Home() {
           <CardCategoryList categoryList={adaptedMoviesListFirstThree} />
 
           <Link to="/category/movie" class-name="text-secondary">
-            <p className="text-decoration-underline">
+            <p className="text-decoration-underline text-white">
               {" "}
               See the complete list of all the popular movies at the moment.
             </p>
@@ -40,7 +40,7 @@ function Home() {
           <CardCategoryList categoryList={adaptedShowsListFirstThree} />
 
           <Link to="/category/TVShows" class-name="text-secondary">
-            <p className="text-decoration-underline">
+            <p className="text-decoration-underline text-white">
               {" "}
               See the complete list of all the popular TV Shows at the moment.
             </p>

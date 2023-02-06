@@ -9,7 +9,7 @@ function CardCategoryList(props) {
     <Container>
       <Row>
         {categoryList.map((category) => (
-          <Col xs={12} md={6} lg={4} className="mb-4" key={category.id}>
+          <Col xs={12} md={7} lg={3} className="mb-4" key={category.id}>
             <CardCategory
               id={category.id}
               name={category.name}

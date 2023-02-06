@@ -2,11 +2,11 @@ import { Route, Routes } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
-import SearchCategory from "./pages/Category";
 import CategoryDetails from "./pages/CategoryDetails";
 import { useReducer } from "react";
 import { favReducer, initialState } from "./store/reducer";
 import { FavContext } from "./store/context";
+import Category from "./pages/Category";
 
 function App() {
   const [favState, favDispatch] = useReducer(favReducer, initialState);
@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/category/:categoryType" element={<SearchCategory />} />
+          <Route path="/category/:categoryType" element={<Category />} />
           <Route
             path="/category/:categoryType/:categoryId"
             element={<CategoryDetails />}

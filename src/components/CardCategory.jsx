@@ -24,14 +24,16 @@ function CardCategory(props) {
   return (
     //deductedCategory is taken from adaptors, deducted from the available fields (this is useful when we want to reach the CategoryDetails page from Home/Favorite page, so we cannot get the categoryType from the link)
     <Card
-      className={`${styles.cardCategory} h-100 d-flex flex-content justify-content-between align-items-center`}
+      className={`${styles.cardCategory} h-100 d-flex flex-content  align-items-center`}
     >
       <Link
         to={`/category/${categoryType ? categoryType : deductedCategory}/${id}`}
       >
         <Card.Img
           variant="top"
-          src={getImgURL(imgPath)}
+          src={
+            !imgPath ? "https://bflix.biz/no-poster.png" : getImgURL(imgPath)
+          }
           alt="No poster available"
         />
         <Card.Body>
