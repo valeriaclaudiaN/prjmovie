@@ -16,13 +16,13 @@ function Header() {
   }
 
   return (
-    <header>
-      <nav className={`${styles.nav} bg-dark w-100`}>
+    <header className={`${styles.nav}`}>
+      <nav className={`w-100`}>
         <Container className="d-flex justify-content-between align-items-center">
           <Link to="/" className="p-3">
             <img src="/logo.png" alt="Cinephile's Studio logo" />
           </Link>
-          <div className={styles.menuIconContainer}>
+          <div>
             <span
               onClick={handleMenuClick}
               className={`material-icons ${styles.menuIcon} text-light`}

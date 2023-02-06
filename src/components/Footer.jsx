@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-dark">
       <Container>
         <p className="text-light text-center m-0 py-3">
-          Valeria Claudia Neamtu © 2023. All rights reserved.
+          Cinephile's Studio © 2023. All rights reserved.
         </p>
       </Container>
     </footer>

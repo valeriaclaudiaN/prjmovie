@@ -4,8 +4,9 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getImgURL } from "../api/endpoints";
-import { removeFromFavs } from "../store/actions";
-import { FavContext } from "../store/context";
+import { removeFromFavs } from "../store/Favs/actions";
+import { FavContext } from "../store/Favs/context";
+
 import styles from "./CardCategory.module.css";
 
 //Component for displaying movie/TVShow cards + adding links to them (no layout adjustment). Re-used in CardCategoryList component
@@ -13,7 +14,6 @@ import styles from "./CardCategory.module.css";
 function CardCategory(props) {
   const { id, name, imgPath, deductedCategory, hasCloseButton } = props;
   const { categoryType } = useParams();
-
   const { favDispatch } = useContext(FavContext);
 
   function handleRemoveFromFavs(id) {
@@ -24,7 +24,7 @@ function CardCategory(props) {
   return (
     //deductedCategory is taken from adaptors, deducted from the available fields (this is useful when we want to reach the CategoryDetails page from Home/Favorite page, so we cannot get the categoryType from the link)
     <Card
-      className={`${styles.cardCategory} h-100 d-flex flex-content  align-items-center`}
+      className={`${styles.cardCategory}  h-100 d-flex flex-content  align-items-center`}
     >
       <Link
         to={`/category/${categoryType ? categoryType : deductedCategory}/${id}`}

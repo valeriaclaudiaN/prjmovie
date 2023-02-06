@@ -4,12 +4,20 @@ import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
 import CategoryDetails from "./pages/CategoryDetails";
 import { useReducer } from "react";
-import { favReducer, initialState } from "./store/reducer";
-import { FavContext } from "./store/context";
+import { favReducer, initialState } from "./store/Favs/reducer";
+import { FavContext } from "./store/Favs/context";
 import Category from "./pages/Category";
+import { useLocalStorage } from "./utils/hooks/useLocalStorage";
 
 function App() {
-  const [favState, favDispatch] = useReducer(favReducer, initialState);
+  //Initializing the state starting from localStorage
+  //If we have a state in localStorage, we use it, if not, we start from initialState (which is initially [])
+
+  const [initialLocalStorageState] = useLocalStorage("favorites", initialState);
+  const [favState, favDispatch] = useReducer(
+    favReducer,
+    initialLocalStorageState
+  );
 
   return (
     <div className="App">

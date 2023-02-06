@@ -1,15 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import CardCategoryList from "../components/CardCategoryList";
 import Layout from "../components/Layout";
-import { FavContext } from "../store/context";
+import { FavContext } from "../store/Favs/context";
+import { useLocalStorage } from "../utils/hooks/useLocalStorage";
 
 function Favorites() {
   const { favState } = useContext(FavContext);
-
   const { favs } = favState;
-  console.log(favs);
 
+  /////
+
+  //Section for updating the local storage after removing a movie/tvshow from favorites
+
+  // We get the function which modifies the state of the local storage. We don't need the state from local storage, so we leave it empty.
+  const [, setLocalStorageState] = useLocalStorage("favorites", favState);
+
+  // When new favorite movies/TV shows are added in this section, the localStorage is updated with them. (The program suggests that setLocalStorageState should be also included in the dependency array)
+
+  useEffect(() => {
+    setLocalStorageState(favState);
+  }, [favState, setLocalStorageState]);
+
+  //////
   const adaptedMovieFavs = favs.filter(
     (movie) => movie.deductedCategory === "movies"
   );
