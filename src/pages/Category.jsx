@@ -1,4 +1,4 @@
-import { Button, Container, Form, FormControl } from "react-bootstrap";
+import { Container, Form, FormControl } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import {
   getPopularCategoryEndpoint,
@@ -40,7 +40,6 @@ function Category() {
   }
 
   function searchCategory(e) {
-    currentPage = "1";
     e.preventDefault();
   }
   const categorySearchEndpoint = getSearchCategoryEndpoint(
@@ -48,6 +47,7 @@ function Category() {
     query,
     currentPage
   );
+
   const categorySearch = useFetch(categorySearchEndpoint);
   const adaptedCategorySearchList = getCategoryList(categorySearch);
 
@@ -74,9 +74,6 @@ function Category() {
             value={query}
             onChange={handleChangeSearch}
           />
-          <Button type="submit" variant="dark">
-            Search
-          </Button>
         </Form>
 
         {query.length === 0 ? (

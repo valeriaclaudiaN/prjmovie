@@ -12,19 +12,19 @@ function Home() {
   const moviesEndpoint = getPopularCategoryEndpoint("movie");
   const movies = useFetch(moviesEndpoint);
   const adaptedMoviesList = getCategoryList(movies);
-  const adaptedMoviesListFirstThree = adaptedMoviesList.slice(0, 4);
+  const adaptedMoviesListFirstSix = adaptedMoviesList.slice(0, 6);
 
   const showsEndpoint = getPopularCategoryEndpoint("tv");
   const shows = useFetch(showsEndpoint);
   const adaptedShowsList = getCategoryList(shows);
-  const adaptedShowsListFirstThree = adaptedShowsList.slice(0, 4);
+  const adaptedShowsListFirstSix = adaptedShowsList.slice(0, 6);
 
   return (
     <Layout>
       <section className="my-5">
         <Container>
           <h1 className="mb-5 pt-3"> Movies</h1>
-          <CardCategoryList categoryList={adaptedMoviesListFirstThree} />
+          <CardCategoryList categoryList={adaptedMoviesListFirstSix} />
 
           <Link to="/category/movie" class-name="text-secondary">
             <p className="text-decoration-underline text-white">
@@ -37,7 +37,7 @@ function Home() {
       <section className="my-5">
         <Container>
           <h1 className="mb-5 pt-3"> TV Shows</h1>
-          <CardCategoryList categoryList={adaptedShowsListFirstThree} />
+          <CardCategoryList categoryList={adaptedShowsListFirstSix} />
 
           <Link to="/category/TVShows" class-name="text-secondary">
             <p className="text-decoration-underline text-white">

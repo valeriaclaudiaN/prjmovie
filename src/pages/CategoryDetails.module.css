@@ -26,3 +26,13 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 530px) {
+  .alert {
+    left: 30%;
+    font-size: 13px;
+  }
+  .categoryDetails img {
+    height: 520px;
+  }
+}
