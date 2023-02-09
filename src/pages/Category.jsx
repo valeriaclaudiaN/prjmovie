@@ -31,6 +31,7 @@ function Category() {
     currentPage
   );
   const category = useFetch(categoryEndpoint);
+
   const adaptedCategoryList = getCategoryList(category);
 
   //Listing all search findings of movies/TV Shows
@@ -49,6 +50,13 @@ function Category() {
   );
 
   const categorySearch = useFetch(categorySearchEndpoint);
+
+  // let tpg;
+  // if (categorySearch) {
+  //   tpg = categorySearch.total_pages;
+  // }
+  // console.log(tpg, Number(currentPage));
+
   const adaptedCategorySearchList = getCategoryList(categorySearch);
 
   return (

@@ -17,6 +17,7 @@ function Home() {
   const showsEndpoint = getPopularCategoryEndpoint("tv");
   const shows = useFetch(showsEndpoint);
   const adaptedShowsList = getCategoryList(shows);
+
   const adaptedShowsListFirstSix = adaptedShowsList.slice(0, 6);
 
   return (

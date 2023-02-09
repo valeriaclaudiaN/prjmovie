@@ -7,7 +7,11 @@ export function getSearchCategoryEndpoint(
   pageNumber = 1
 ) {
   const queryParams = `${category}?api_key=${API_KEY}&query=${searchContent}&language=en-US&page=${pageNumber}`;
-  return `https://api.themoviedb.org/3/search/${queryParams}`;
+  if (searchContent) {
+    return `https://api.themoviedb.org/3/search/${queryParams}`;
+  } else {
+    return null;
+  }
 }
 
 // getting all the (popular) movies/TV shows

@@ -31,7 +31,6 @@ function Pag(props) {
     <Pagination>
       <Pagination.Prev onClick={handlePrevPage} />
       <Pagination.Item disabled>{page}</Pagination.Item>
-
       <Pagination.Next onClick={handleNextPage} />
     </Pagination>
   );
